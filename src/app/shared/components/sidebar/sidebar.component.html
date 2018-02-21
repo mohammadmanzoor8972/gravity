@@ -1,0 +1,23 @@
+<nav class="sidebar">
+    <ul class="list-group">
+        <div class='logo'>
+                <img src="assets/images/flat-avatar.png" class="user-avatar" />
+        </div>
+
+        <a id='sidebar-home' class="list-group-item home" [routerLink]="['/dashboard']">
+            HOME
+        </a>
+        <a  id='sidebar-reports' class="list-group-item" [routerLink]="['/dashboard/addapp']">
+            ADD APP
+        </a>
+        <a  id='sidebar-reports' class="list-group-item" [routerLink]="['/dashboard/applist']">
+            APP List
+        </a>
+        <a  class="list-group-item" [routerLink]="['/login']">
+            LOGOUT
+        </a>
+    </ul>
+</nav>
+<!--
+"['/dashboard/reports']"
+-->

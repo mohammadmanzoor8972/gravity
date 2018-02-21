@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    </head>
+    <body>
+        <div id="messages">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    <script>
+        $(document).ready(function(){
+		
+			var socket = io.connect("http://localhost:4300");
+			//socket.emit("update", "Initiate");
+		
+			socket.on('update', function(msg){
+			console.log(msg)
+				$(".capitaAdd").remove();
+				if(msg) {				
+				$("body").append(msg);
+			
+					}
+				$(".capitaAdd").click(function(){
+					$(".capitaAdd").remove();
+				});
+			});
+			
+			
+        })
+        
+       </script>
+    </body>
+</html>

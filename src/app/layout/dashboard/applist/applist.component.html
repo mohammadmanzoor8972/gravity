@@ -1,0 +1,41 @@
+<div class="reports-page pt-page-moveFromBottom">
+  <div class="reports-wrapper">
+    <div class="hide" id='left'>
+        <app-sidebar [hidden]='!show'></app-sidebar>
+    </div>
+    <div class='hide-div-content' id='right'>
+        <div class='reports-btn-fr-wrapper'>
+            <div class='reports-btn-sidebar-collapse'>
+                <a id='btn'  class='fa fa-bars fa-2x'(click)='btnClicked()' aria-hidden="true"></a>
+            </div>
+            <div class="fr">
+                <h2>Applications list <small>Choose application to promote.</small></h2>
+            </div>
+        </div>
+        <div class="jumbotron jumbotron-fluid scrollbar">
+            <div class="container">
+                   
+                <h1>Applications List 
+                   </h1>
+               
+                <br /><br />
+                <div class="card" *ngFor="let item of applistData"  [class.isPublish]="item.isPublish==true">
+                        <h5 class="card-header">{{item.title}} </h5>
+                        <div class="card-body">
+                          <h5 class="card-title">Special title treatment</h5>
+                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <button class="btn btn-primary pull-right" (click)="publish(item)" *ngIf="item.isPublish==false">Publish !</button>
+                        </div>
+                </div>
+            
+                  
+                    
+                    
+                    <br/><br/>
+                   
+            </div>
+        </div>
+       
+    </div>
+  </div>
+</div>

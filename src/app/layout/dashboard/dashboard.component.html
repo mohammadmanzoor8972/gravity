@@ -1,0 +1,43 @@
+<div class="dashboard-page pt-page-moveFromBottom">
+  <div class="wrapper">
+    <!-- <div class="row"> -->
+    <div class='hide' [hidden]='!show' id='left'>
+        <app-sidebar ></app-sidebar>
+    </div>
+    <div class='hide-div-content' id='right'>
+        <div class='btn-fr-wrapper'>
+            <div class='btn-sidebar-collapse'>
+                <a id='btn'  class='fa fa-bars fa-2x'(click)='btnClicked()' aria-hidden="true"></a>
+            </div>
+            <div class="fr">
+                <h2>Overview <small>Why is Versatile Theme so awesome?</small></h2>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Dashboard</h1>
+                    Enter your application details, which will published on your other web applications !<br /><br />
+               
+              
+                  <div class="tiles" [routerLink]="['/dashboard/addapp']"> 
+                   <span >Add</span> 
+                  </div>
+                  <div class="tiles" [routerLink]="['/dashboard/applist']"> 
+                    <span>View </span> 
+                   </div>
+                   <br /><br />
+                   <div class="card" *ngIf="activeApp.isPublish">
+                        <h5 class="card-header">{{activeApp.title}}</h5>
+                        <div class="card-body">
+                          <h5 class="card-title">Special title treatment</h5>
+                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <button class="btn btn-primary pull-right" (click)="unPublish()">UnPublish !</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+  </div>
+
+</div>
